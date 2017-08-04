@@ -1,0 +1,101 @@
+<md-content>
+ <md-card class="md-padding" layout-align="center center">
+  <md-card-header>
+    <md-card-header-text class="md-headline">
+      TIG Custom Calculator
+    </md-card-header-text>
+  </md-card-header>
+  
+  <md-content id="myCalculator" ng-controller="SuccessController">
+    <form novalidate>
+      <md-content class="md-padding" layout="column">
+        <!--INCOME-->
+        <md-content id="slider-cont" flex layout="row" layout-xs="column">
+          <md-input-container>
+            <label>Annual salary (after tax) of</label>
+            <h1><input id="input" flex type="number" ng-change="calc()" ng-model="current_income" value="{{current_income}}" format="currency" min="1" max="999999"></h1>
+          </md-input-container>
+          <md-slider-container flex="90" flex-xs="100">
+            <md-slider min="1" max="100000" ng-model="current_income" aria-label="red" id="red-slider" ng-change="calc()">
+            </md-slider>
+          </md-slider-container>
+        </md-content>
+
+        <!--SAVE %-->
+        <md-content id="slider-cont" flex layout="row" layout-xs="column">
+          <md-input-container>
+            <label>Percentage of income to save</label>
+            <h1><input flex type="number" ng-change="calc()" ng-model="current_pc" value="{{current_pc}}" min="1" max="100"></h1>
+          </md-input-container>
+          <md-slider-container flex="90" flex-xs="100">
+            <md-slider class='' flex min="1" max="100" ng-model="current_pc" aria-label="red" id="red-slider" ng-change="calc()">
+            </md-slider>
+          </md-slider-container>
+        </md-content>
+
+        <!--YEARS-->
+        <md-content id="slider-cont" flex layout="row" layout-xs="column">
+          <md-input-container>
+            <label>Number of years</label> 
+            <h1><input type="number" ng-change="calc()" ng-model="current_years" value="{{current_years}}" min="1" max="60"></h1>
+          </md-input-container>
+          <md-slider-container flex="90" flex-xs="100">
+            <md-slider class='' flex min="1" max="60" ng-model="current_years" aria-label="red" id="red-slider" ng-change="calc()">
+            </md-slider>
+          </md-slider-container>
+        </md-content>
+      </md-content>
+    </form>
+
+
+    <!--top part with graphics, interest groups, data for each group and title placeholders.-->
+    <md-content layout-xs="column" layout="row">
+      <!--each section contains an interest group and some dummy data for css reference. Will be linked to database.-->
+      <!--sections have been divided into classes to allow individual css styling.-->
+      <md-content>
+        <md-card id="success_card1" class="md-padding" layout-align="center center">
+          <!--<img src="nutmeg-logo-green.svg" class="md-card-image" alt="image caption">-->
+          <md-card-content>
+            <h1> {{custom_oneLumpSum | currency:'£':0}} </h1>
+          </md-card-content>
+          <md-card-footer>
+            Bank @ 1% annual return
+          </md-card-footer>
+        </md-card>
+      </md-content>
+      <md-content>
+        <md-card id="success_card2" class="md-padding" layout-align="center center">
+          <!--<img src="nutmeg-logo-green.svg" class="md-card-image" alt="image caption">-->
+          <md-card-content>
+            <h1> {{custom_tenLumpSum | currency:'£':0}} </h1>
+          </md-card-content>
+          <md-card-footer>
+            Investment @ 10% annual return
+          </md-card-footer>
+        </md-card>
+      </md-content>
+    </md-content>
+  </md-content>
+        
+</md-card>
+<!-- meetings cf -->
+</md-content>
+
+
+<!--Google Analytics - worc-->
+<script>
+  (function (i, s, o, g, r, a, m) {
+    i['GoogleAnalyticsObject'] = r;
+    i[r] = i[r] || function () {
+      (i[r].q = i[r].q || []).push(arguments)
+    }, i[r].l = 1 * new Date();
+    a = s.createElement(o)
+      , m = s.getElementsByTagName(o)[0];
+    a.async = 1;
+    a.src = g;
+    m.parentNode.insertBefore(a, m)
+  })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+  ga('create', 'UA-101486627-1', 'auto');
+  ga('send', 'pageview');
+</script>

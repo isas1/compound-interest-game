@@ -1,0 +1,119 @@
+ <md-toolbar ng-controller="RegistrationController">
+    <div class="md-toolbar-tools">
+
+      <h2 class="md-flex" flex>
+      <a ng-href="#!/landing">T<span>I</span><span>G</span></a><i class="material-icons" style="color: #fff;">trending_up</i></h2>
+      
+      <div>
+      <!-- Menu button for small screens <960 -->
+        <md-menu>
+          <md-button hide-gt-sm class="md-icon-button" aria-label="More" ng-click="$mdMenu.open($event)">
+            
+            <md-icon>menu</md-icon>
+          </md-button>
+          
+          <!-- User logged OUT -->
+            
+          <md-menu-content width="4">
+            <md-menu-item>
+              <md-button hide-gt-sm class="no-icon-button" aria-label="Login" href="#!/landing" ng-click="$mdCloseMenu($event)">
+               <md-icon>free_breakfast</md-icon>
+                Free Calculator
+              </md-button>
+            </md-menu-item>
+            
+            <md-menu-item ng-hide="currentUser">
+              <md-button hide-gt-sm class="no-icon-button" aria-label="Login" href="#!/login" ng-click="$mdCloseMenu($event)">
+               <md-icon>input</md-icon>
+                Login
+              </md-button>
+            </md-menu-item>
+            
+            <md-menu-item ng-hide="currentUser">
+              <md-button hide-gt-sm class="no-icon-button" aria-label="More" href="#!/register" ng-click="$mdCloseMenu($event)">
+                <md-icon>assignment</md-icon>
+                Register
+              </md-button>
+            </md-menu-item>
+            
+            <!-- User logged IN -->
+            
+            <md-menu-item ng-show="currentUser">
+              <md-button hide-gt-sm class="no-icon-button" aria-label="Investments" href="#!/investcalc" ng-click="$mdCloseMenu($event)">
+               <md-icon>account_balance</md-icon>
+                Investments
+              </md-button>
+            </md-menu-item>
+            
+            <md-menu-item ng-show="currentUser">
+              <md-button hide-gt-sm class="no-icon-button" aria-label="Calculator" href="#!/success" ng-click="$mdCloseMenu($event)">
+                <md-icon>assessment</md-icon>
+                Calculator
+              </md-button>
+            </md-menu-item>
+            
+            <md-divider ng-show="currentUser"></md-divider>
+            
+            <md-menu-item ng-show="currentUser">
+              <md-button hide-gt-sm class="no-icon-button" aria-label="Calculator" href="#!/login" ng-click="logout(); $mdCloseMenu($event)">
+                <md-icon>lock_outline</md-icon>
+                Logout
+              </md-button>
+            </md-menu-item>
+            
+          </md-menu-content>
+        </md-menu>
+      </div>
+      
+      
+      <md-menu md-position-mode="target-right target" ng-repeat="menu in data.toolbar.menus">
+        <md-button class="md-icon-button" aria-label="{{menu.name}}" ng-click="$mdOpenMenu($event)">
+          <md-icon>menu</md-icon>
+        </md-button>
+        <md-menu-content width={{menu.width}}>
+          <md-subheader>{{menu.name}}</md-subheader>
+          <md-menu-item ng-repeat="action in menu.actions">
+            <md-button layout-fill md-ink-ripple ng-click="toast(action.message)">
+              <md-icon md-class="{{action.error ? 'md-warn' : 'md-primary'}}" md-menu-align-target>{{action.completed ? 'done' : 'hourglass_empty'}}</md-icon>
+              {{action.name}}
+            </md-button>
+          </md-menu-item>
+        </md-menu-content>
+      </md-menu>
+      
+      <!-- Icons for larger screens > 960 -->
+      <!-- Logged out -->
+      
+      <md-button ng-hide="currentUser" hide-xs hide-sm aria-label="More">
+        <a class="nav_links" ng-href="#!/login">Login</a>
+      </md-button>
+      <md-button ng-hide="currentUser" hide-xs hide-sm aria-label="More">
+        <a class="nav_links" ng-href="#!/register">Register</a>
+      </md-button>
+      
+      <!-- Logged in -->
+      <md-button ng-show="currentUser" hide-xs hide-sm aria-label="More">
+        <a class="nav_links" ng-href="#!/landing">Free Calculator</a>
+      </md-button>
+      <md-button ng-show="currentUser" hide-xs hide-sm aria-label="More">
+        <a class="nav_links" ng-href="#!/success">Custom Calculator</a>
+      </md-button>
+      <md-button ng-show="currentUser" hide-xs hide-sm aria-label="More">
+        <a class="nav_links" ng-href="#!/investcalc">Investments</a>
+      </md-button>
+      <md-button ng-show="currentUser" hide-xs hide-sm aria-label="More">
+        <a class="nav_links" ng-href="#!/login" ng-click="logout()">Logout</a>
+      </md-button>
+      
+      <!--
+    <li ng-hide='currentUser'><a ng-href='#/!landing'>Free Calculator</a></li>
+    
+    <li ng-show='currentUser'><a ng-href="#!/login" ng-click='logout()'>Logout</a></li>
+  </ul>-->
+   
+    </div>
+  </md-toolbar>
+
+
+
+<!-- Checked for color... styles left in for flags -->

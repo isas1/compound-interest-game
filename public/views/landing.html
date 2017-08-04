@@ -1,0 +1,83 @@
+<!--<md-content flex layout-padding>
+  <div style="text-align: center;" class="md-padding">
+    <video width="90%" height="90%" controls src="../public/assets/video/Intro.mp4" autoplay> </video>
+  </div>
+</md-content>-->
+
+<md-content layout="column">
+  <md-card class="md-padding" layout-align="center center">
+    <md-card-title>
+      <span class="md-headline">TIG Investment Calculator</span>
+    </md-card-title>
+        <!--break included for smaller screens. Will set it not to show for larger screens.-->
+          Based on the average UK Salary (after tax) of <span><h1> £21,772</h1></span>if you save just 
+        <h1>10%</h1> 
+        for
+        <h1><span class="highlight">{{current_years}}</span> years</h1>
+    <div class="highlight">(change years)</div>
+          <md-slider-container>
+            <md-slider id='slide' min="21" max="51" ng-model="current_years" aria-label="Year slider bar" id="year-slider" ng-change="calc()">
+            </md-slider>
+          </md-slider-container>
+    <!--top part with graphics, interest groups, data for each group and title placeholders.-->
+    
+      <!--each section contains an interest group and some dummy data for css reference. Will be linked to database.-->
+      <!--sections have been divided into classes to allow individual css styling.-->
+    <h2>you would have:</h2>
+     <md-content layout-gt-xs="row">
+        <md-card id="landing_card1" class="md-padding" layout-align="center center">
+          <!--<img src="nutmeg-logo-green.svg" class="md-card-image" alt="image caption">-->
+          <md-card-content>
+            <h1> {{fixed_oneLumpSum | currency:'£':0}} </h1>
+          </md-card-content>
+          <md-card-footer>
+            Bank account @ 1% annual return
+          </md-card-footer>
+        </md-card>
+
+        <md-card id="landing_card2" class="md-padding" layout-align="center center">
+          <!--<img src="nutmeg-logo-green.svg" class="md-card-image" alt="image caption">-->
+          <md-card-content>
+            <h1> {{fixed_sevenLumpSum | currency:'£':0}} </h1>
+          </md-card-content>
+          <md-card-footer>
+            Investment @ 7% annual return
+          </md-card-footer>
+        </md-card>
+      </md-content>
+
+  </md-card> <!-- Calculator -->
+  
+  <md-card class="md-padding" layout-align='center center'>
+    <md-card-content>
+      <code>To adjust salary, save percentage or just find out more about the power of saving over the long term:</code>
+    </md-card-content>
+    <md-button class="md-accent" ng-href="#!/register" style="font-size:2em;">sign up here</md-button>
+    <md-button class="md-accent" ng-href="#!/login">Login here</md-button>
+  </md-card> <!-- CTA -->
+  <md-card class="md-padding">
+    <md-card-title>
+      <span class="md-headline">Key Information</span>
+    </md-card-title>
+    <md-card-content>
+    Interest rates may vary of time and so are estimates but what is certain is the calculations. If you invest at the rates above you <i>will</i> get the returns. The main message I'm trying to send is that <b>investing over the long term is paramount</b> because the <b>interest earns interest</b>, which amounts to huge sums over 30 or 40 years.
+    <br>
+    <br> 1% is an optimistic interest rate for a bank savings account - The Bank of England base rate is currently 0.25%.
+    <br>
+    <br> 7% investment is the average annual return of the FTSE100 (the 100 companies listed on the London Stock Exchange with the highest market capitalisation) since 1917.
+    </md-card-content>
+  </md-card> <!-- Key Information -->
+</md-content> 
+  
+
+  <!--Google Analytics - worc-->
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-101486627-1', 'auto');
+  ga('send', 'pageview');
+
+</script>

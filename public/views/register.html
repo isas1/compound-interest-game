@@ -1,0 +1,98 @@
+
+ <md-card class="md-padding">
+  <!--novalidate is used to disable browser validation.-->
+  <md-card-header>
+    <md-card-header-text layout-align="center center">
+      <span class="md-title"><h1>Register</h1></span>
+      <span class="md-subhead">Register to access more complex tools and investment information</span>
+    </md-card-header-text>
+  </md-card-header>
+  <!--register() in registration.js in run when form is submitted.-->
+  <form name="myform" ng-submit="register()" novalidate>
+
+    <md-card-content layout="row" layout-align="center center" layout-wrap>
+
+      <div layout-xs="column" layout="row" layout-wrap>
+        <md-input-container flex-sm="50" flex-xs="100">
+          <label>First Name</label>
+          <!--craetes input box for relevent fields - ng-model creates variable to store the data ng-required forces entry (when true).-->
+          <input type="text" name="firstname" ng-model="user.firstname" ng-required="true">
+          <div ng-messages="myform.firstname.$error">
+            <div ng-message="required">First Name is required</div>
+            <div ng-message="minlength">First Name needs to be at least 5 characters</div>
+          </div>
+        </md-input-container>
+
+
+        <!--p for error message. Uses angular validation methods $invalid and $touched to query whether there is input and the validity, then ng-show is used to display the p when the conditions are met.
+      <p class="error validationerror"
+      ng-show="myform.firstname.$invalid && myform.firstname.$touched">
+      First name required</p>-->
+
+        <md-input-container flex-sm="50" flex-xs="100">
+          <label>Last Name</label>
+          <input type="text" name="lastname" ng-model="user.lastname" ng-required="true">
+          <div ng-messages="myform.lastname.$error">
+            <div ng-message="required">Last Name is required</div>
+            <div ng-message="minlength">Last Name is too short</div>
+          </div>
+        </md-input-container>
+        <!--<p class="error validationerror" ng-if='myform.firstname.$valid' ng-show="myform.lastname.$invalid && myform.lastname.$touched">
+      Last name required</p>-->
+
+        <md-input-container flex-sm="50" flex-xs="100">
+          <label>Email</label>
+
+          <input type="email" name="email" ng-model="user.email" ng-required="true">
+          <div ng-messages="myform.email.$error">
+            <div ng-message="required">Email is required</div>
+            <div ng-message="minlength">Email needs to be at least 5 characters</div>
+          </div>
+        </md-input-container>
+
+        <!--
+      <p class="error validationerror"
+      ng-if='myform.firstname.$valid && myform.lastname.$valid'ng-show="myform.email.$invalid && myform.email.$touched">
+      Must be a valid email</p>-->
+
+        <md-input-container flex-sm="50" flex-xs="100">
+          <label>Password</label>
+          <input type="password" name="password" ng-model="user.password" ng-minlength='3' ng-required="true">
+          <div ng-messages="myform.password.$error">
+            <div ng-message="required">Password is required</div>
+            <div ng-message="minlength">Password is too short</div>
+          </div>
+        </md-input-container>
+
+        <!--
+      <p class="error validationerror"
+      ng-if='myform.firstname.$valid && myform.lastname.$valid && myform.email.$valid'ng-show="myform.password.$invalid && myform.email.$touched">
+      Password is required</p>-->
+      </div>
+    </md-card-content>
+  
+  <!-- Card buttons -->
+  <md-card-actions layout="column" layout-align="center center">
+    <md-button type="submit" class="md-accent md-raised" ng-disabled="myform.$invalid">Register</md-button>
+    <br>
+    <md-button ng-href="#!/login">or login here</md-button>
+   </md-card-actions>
+   </form>
+</md-card>
+<!--Google Analytics - worc-->
+<script>
+  (function (i, s, o, g, r, a, m) {
+    i['GoogleAnalyticsObject'] = r;
+    i[r] = i[r] || function () {
+      (i[r].q = i[r].q || []).push(arguments)
+    }, i[r].l = 1 * new Date();
+    a = s.createElement(o)
+      , m = s.getElementsByTagName(o)[0];
+    a.async = 1;
+    a.src = g;
+    m.parentNode.insertBefore(a, m)
+  })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+  ga('create', 'UA-101486627-1', 'auto');
+  ga('send', 'pageview');
+</script>

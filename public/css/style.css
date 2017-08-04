@@ -1,0 +1,97 @@
+/* 1. ERRORS */
+
+/* Input box error colours */
+
+  input.ng-invalid.ng-touched {
+    border-color: #DA3637;
+    border-width: 0 0 1px 0;
+  }
+
+  md-input-container.md-input-invalid label {
+    color: #DA3637;
+  }
+
+  input.ng-valid.ng-touched {
+    border-color: #509D12;
+    border-width: 0 0 1px 0;
+  }
+
+/* 2. Input and sliders */
+
+/* Color override for input containers */
+
+  .highlight, md-input-container .md-input[type=number] {
+    color: rgb(124,77,255); !important
+  }
+
+/* Incease slider height */
+
+  md-slider .md-track {
+    height: 150%;
+  }
+
+/* 3. Media */
+  
+  /* Max width */
+
+  @media screen and (max-width: 600px) {
+    iframe {
+        width: 392px; !important;
+        height: 220px; !important;
+    }
+    
+    #slider-cont {
+      min-height: 160px;
+    }
+    
+    input {
+      max-width: 160px;
+    }
+  }
+
+  @media screen and (max-width: 500px) {
+    iframe {
+        width: 353px; !important;
+        height: 198px; !important;
+    }
+  }
+
+  @media screen and (max-width: 400px) {
+    iframe {
+        width: 318px; !important;
+        height: 178px; !important;
+    }
+  }
+
+  @media screen and (max-width: 350px) {
+    iframe {
+        width: 224px; !important;
+        height: 126px; !important;
+    }
+  }
+
+  /* Min width */
+
+  @media screen and (min-width: 1100px) {
+    md-card {
+        /* width: 500px; !important; */
+    }
+  }
+  
+
+/* 4. Browser specific */
+
+  @media not all and (min-resolution:.001dpcm) { @media
+  {
+      input { 
+          font-size: 0.8em;
+      }
+  }}
+
+/* Other overrides */
+
+/* Success page height overflow fix */
+
+  .layout-column>.flex {
+    overflow: visible;
+  }

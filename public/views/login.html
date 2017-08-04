@@ -1,0 +1,63 @@
+<md-content ng-app="myApp">
+  <md-card class="md-padding">
+    <md-card-header>
+      <md-card-header-text layout-align="center center">
+        <span class="md-title"><h1>Welcome</h1></span>
+        <span class="md-subhead">Login to The <span class="interest">Interest</span> Game</span>
+      </md-card-header-text>
+    </md-card-header>
+    
+    
+    <!--<p class="message animate-if" ng-show="message"> {{ message }}</p>-->
+    <!--runs login function when myform is submit.-->
+    <form name="myform" ng-submit="login()" novalidate>
+      <md-card-content layout-xs="column" layout="row" layout-align="center center" layout-wrap>
+        <!--ng-model is used to create a variable 'email' in the user scope and ng-required='true' enforces input.-->
+        <md-input-container>
+          <label>Email {{user.email.$error}}</label>
+          <input type="email" name="email" ng-model="user.email" ng-minlength='5' ng-required="true">
+           <div ng-messages="myform.email.$error">
+             <div ng-message="required">Email is required</div>
+             <div ng-message="minlength">Email is too short</div>
+           </div>
+          <!--FORM VALIDATION ALERT - creates a paragraph that will only show when there is an invalid email input. 'error' and 'validationerror' classes are added to allow error message styling.-->
+        </md-input-container>
+        <!--UNCOMMENT FOR INPUT ERRORS
+
+          <p class="error validationerror"
+          ng-show="myform.email.$invalid && myform.email.$touched">
+          Must be a valid email</p>-->
+
+        <md-input-container>
+          <label>Password</label>
+          <input type="password" name="password" ng-model="user.password" ng-required="true" ng-minlength="3">
+          <div ng-messages="myform.password.$error">
+             <div ng-message="required">Password is required</div>
+             <div ng-message="minlength">Password is too short</div>
+           </div>
+          <!--<p ng-if='myform.email.$valid' class="error validationerror"
+          ng-show="myform.password.$invalid && myform.email.$touched">
+          Password is required</p>-->
+        </md-input-container>
+      </md-card-content>
+
+      <md-card-actions layout="column" layout-align="center center">
+        <md-button type="submit" ng-disabled="myform.$invalid" class="md-accent md-raised">Login</md-button>
+        <br>
+        <md-button class="md-accent" ng-href="#!/register">New to TIG? register here</md-button>
+      </md-card-actions>
+    </form>
+  </md-card>
+</md-content>
+
+  <!--Google Analytics - worc-->
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-101486627-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
