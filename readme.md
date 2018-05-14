@@ -1,3 +1,4 @@
+# TheInterestGame - finished 17th August 2017 - committed 14 May 2018
 Footer too big when content does not reach the bottom of the page i.e. login and register
 
 Page heading cards to be changed to animations
