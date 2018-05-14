@@ -5,4 +5,5 @@ Page heading cards to be changed to animations
     - Video to add to landing page (added - needs to be optimised for web i.e. quality and size)
 
 Fab menu for mobile when scroll down# theinterestgame
-# tig
+
+Link to the site: https://theinterestgame.com/#!/landing
