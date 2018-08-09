@@ -1,9 +1,11 @@
 # TheInterestGame - Dynamic compound interest calculator using AngularJS and Angular Material
 
-Use material sliders to change income, interest percentage and length of investments.
+Info:
+
+Use sliders to change income, interest percentage and length of investments.
 
 
-Created with:
+Ninja tools:
 
 Authentication + backend - Firebase 4.1.3 and AngularFire 2.3.0
 Frontend - AngularJS 1.6.5 and Angular Material 1.1.4
