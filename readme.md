@@ -19,4 +19,4 @@ Page heading cards to be changed to animations
 
 Fab menu for mobile when scroll down# theinterestgame
 
-Link to the site: https://theinterestgame.com/
+[Demo here](https://theinterestgame.com "Click to see The Interest Game")
