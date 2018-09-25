@@ -1,5 +1,8 @@
+<img align="right" width="100" height="100" src="https://github.com/isas1/the-investment-game/blob/master/public/assets/images/trend_up.png">
+
 # TheInterestGame
 ## Dynamic compound interest calculator using AngularJS and Angular Material
+
 
 ### Tools used
 
