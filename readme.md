@@ -1,15 +1,19 @@
-# TheInterestGame - Dynamic compound interest calculator using AngularJS and Angular Material
+<img align="right" width="100" height="100" src="https://github.com/isas1/the-investment-game/blob/master/public/assets/images/trend_up.png">
 
-Use material sliders to change income, interest percentage and length of investments.
+# TheInterestGame
+## Dynamic compound interest calculator using AngularJS and Angular Material
 
 
-Created with:
+### Tools used
 
 Authentication + backend - Firebase 4.1.3 and AngularFire 2.3.0
 Frontend - AngularJS 1.6.5 and Angular Material 1.1.4
 
+### Information
 
-Current issues:
+Use sliders to change income, interest percentage and length of investments.
+
+### Current issues
 
 Footer too big when content does not reach the bottom of the page i.e. login and register
 
@@ -18,4 +22,4 @@ Page heading cards to be changed to animations
 
 Fab menu for mobile when scroll down# theinterestgame
 
-Link to the site: https://theinterestgame.com/
+[Demo here](https://theinterestgame.com "Click to see The Interest Game")
